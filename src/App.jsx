@@ -51,7 +51,7 @@ function App() {
 
   };
 
-  // Current Location Weather
+  //crrntlocation
   const getCurrentLocationWeather = () => {
 
     navigator.geolocation.getCurrentPosition(async (position) => {
@@ -94,7 +94,7 @@ function App() {
 
     <div className="h-screen bg-black flex items-center justify-center relative overflow-hidden px-4">
 
-      {/* Background Glow */}
+      {/* Bglow */}
       <div className="absolute inset-0">
 
         <div className="absolute top-[-120px] left-[-120px] w-[300px] h-[300px] bg-cyan-500 opacity-20 blur-[100px] rounded-full"></div>
@@ -103,7 +103,7 @@ function App() {
 
       </div>
 
-      {/* Main Card */}
+      {/* mainCard */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
@@ -111,12 +111,12 @@ function App() {
         className="relative z-10 w-full max-w-sm bg-white/10 backdrop-blur-xl border border-white/10 rounded-[28px] p-6 text-white shadow-2xl"
       >
 
-        {/* App Name */}
+        {/* appName */}
         <h1 className="text-3xl font-bold text-center mb-6">
-          SkyCast
+          Weather Shower
         </h1>
 
-        {/* Search */}
+        {/* Search  */}
         <div className="flex gap-2 mb-5">
 
           <input
@@ -137,12 +137,12 @@ function App() {
 
         </div>
 
-        {/* Current Location Button */}
+        {/* CrrntLoc Button*/}
         <button
           onClick={getCurrentLocationWeather}
           className="w-full bg-white/10 hover:bg-white/20 transition py-3 rounded-2xl mb-5 text-sm"
         >
-          📍 Use Current Location
+           Use Current Location
         </button>
 
         {/* Loading */}
@@ -160,14 +160,14 @@ function App() {
 
         )}
 
-        {/* Error */}
+        {/* error */}
         {error && (
           <p className="text-center text-red-400 mb-4">
             {error}
           </p>
         )}
 
-        {/* Weather UI */}
+        {/* weather ui*/}
         {weather && weather.main && !loading && (
 
           <motion.div
@@ -195,10 +195,10 @@ function App() {
                 repeat: Infinity,
                 duration: 2.5,
               }}
-              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`}
+              src={`https://cdn-icons-png.flaticon.com/128/18005/18005339.png`}
               alt="weather icon"
               className="w-24 mx-auto"
-            />
+            /> 
 
             {/* Temperature */}
             <h1 className="text-center text-6xl font-bold mb-5">
@@ -279,4 +279,3 @@ function App() {
 }
 
 export default App;
-
